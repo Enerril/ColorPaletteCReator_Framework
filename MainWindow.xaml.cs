@@ -32,9 +32,9 @@ namespace ColourAtlas
         int cycleorder = 1;
         public int cBoxHeight;
         public int cBoxWidth;
-        string path = "colors.txt";
+       // string path = "colors.txt";
         string space = " ";
-        StreamWriter writer;
+        //StreamWriter writer;
         int displayedColors;
         Thickness border;
         Thickness panelThickness;
@@ -75,7 +75,7 @@ namespace ColourAtlas
         {
             InitializeComponent();
 
-            writer = new StreamWriter(path, true);
+           // writer = new StreamWriter(path, true);
             var ape_not_kill_ape = new ObservableCollection<int> { 1,2,3,4,5,6 };
             items_box.ItemsSource = ape_not_kill_ape;
             items_box.SelectedIndex = 0;
@@ -615,7 +615,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                       // writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
@@ -666,7 +666,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                        //writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
@@ -716,7 +716,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                        //writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
@@ -767,7 +767,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                        //writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
@@ -817,7 +817,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                        //writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
@@ -868,7 +868,7 @@ namespace ColourAtlas
                         stackPanelColor = Color.FromRgb((byte)redC, (byte)greenC, (byte)blueC);
 
                         //brushColor.Color = stackPanelColor;
-                        writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
+                        //writer.Write(redC + space + greenC + space + blueC + Environment.NewLine);
 
                         brushColor = new SolidColorBrush(stackPanelColor);
                         displayedColors++;
