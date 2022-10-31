@@ -1,0 +1,113 @@
+﻿<Window x:Class="ColourAtlas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColourAtlas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <TabControl>
+
+            <TabItem Header="Program" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.502,0.498">
+
+                    <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0" Height="65" Width="448" >
+                        <TextBlock Grid.Row="1" Grid.Column="0" Height="20" Width="160" FontWeight="Bold" TextWrapping="NoWrap" Margin="5,0,0,0" FontSize="16" Text="Enter canvas size, px"/>
+
+                        <TextBox x:Name="canvasSizeWidth" Height="20" Width="50" MaxLength="4" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="0"/>
+                        <TextBox x:Name="canvasSizeHeight" Height="20" Width="50" MaxLength="4" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0" Height="59" Width="448" >
+                        <TextBlock Grid.Row="1" Grid.Column="0" Height="20" Width="162" FontWeight="Bold" TextWrapping="NoWrap" Margin="5,0,0,0" FontSize="16" Text="Color Box Size,px"/>
+
+                        <TextBox x:Name="colorBoxMaxWidth" Height="20" Width="48" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="20" TextChanged="colorBoxMaxWidth_TextChanged"/>
+                        <TextBox x:Name="colorBoxMaxHeight" Height="20" Width="50" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="20"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,50,0,0" Height="77" Width="448" >
+                        <TextBlock Grid.Row="1" Grid.Column="0" Height="20" Width="302" FontWeight="Bold" FontSize="14" TextWrapping="NoWrap" Margin="5,0,0,0">Vert and Hori margin between color boxes</TextBlock>
+
+                        <TextBox x:Name="vMarg" Height="20" Width="48" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="1" TextChanged="colorBoxMaxWidth_TextChanged"/>
+                        <TextBox x:Name="hMarg" Height="20" Width="50" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="1"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="114" Width="466" Margin="0,72,0,0" Grid.RowSpan="2" IsEnabled="False" RenderTransformOrigin="0.508,2.885" >
+                        <TextBlock Height="33" Width="458" FontSize="16" FontWeight="Bold" TextWrapping="NoWrap" Margin="5,-5,0,0" Text="INITIAL COLOUR RANGE VALUES. RED GREEN BLUE "/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Height="20" Width="146" RenderTransformOrigin="0.493,2.253" >
+                        <TextBlock Grid.Row="1" Grid.Column="1" Height="20" Width="10" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="NoWrap" Margin="0,0,0,0">R</TextBlock>
+
+                        <TextBox x:Name="rMin" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="0" TextChanged="rMin_TextChanged"/>
+                        <TextBox x:Name="rMax" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="255"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0" Height="20" Width="146" RenderTransformOrigin="0.493,2.253" >
+                        <TextBlock Grid.Row="1" Grid.Column="1" Height="20" Width="10" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="NoWrap" Margin="0,0,0,0">G</TextBlock>
+
+                        <TextBox x:Name="gMin" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="0"/>
+                        <TextBox x:Name="gMax" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="255"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,60,0,0" Height="20" Width="146" RenderTransformOrigin="0.493,2.253" >
+                        <TextBlock Grid.Row="1" Grid.Column="1" Height="20" Width="10" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="NoWrap" Margin="0,0,0,0">B</TextBlock>
+
+                        <TextBox x:Name="bMin" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="0,0,0,0" Text="0"/>
+                        <TextBox x:Name="bMax" Height="20" Width="50" MaxLength="3" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="255"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,85,0,0" Height="61" Width="535" RenderTransformOrigin="0.493,2.253" >
+
+                        <TextBlock Height="38" Width="301" FontWeight="Bold" TextWrapping="NoWrap" FontSize="14"><Run Text="tone steps - R G B&#x0a;(preferred 5 or more if whole palette chosen)"/></TextBlock>
+
+                        <TextBox x:Name="rToneStep" Height="20" Width="50" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="17"/>
+                        <TextBox x:Name="gToneStep" Height="20" Width="50" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="17"/>
+                        <TextBox x:Name="bToneStep" Height="20" Width="50" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal" FontSize="14" IsEnabled="True" TextWrapping="NoWrap" Margin="5,0,0,0" Text="17"/>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1"  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,165,0,0" Height="62" Width="280" RenderTransformOrigin="0.493,2.253" >
+                        <Button Background="#FFF4FF08" Width="100" x:Name="createImage" Grid.Row="1" FontWeight="Bold"  FontSize="15" Content="BRING IT!" Foreground="Red" Margin="70,0,0,0" Click="createImage_Click" />
+
+                    </StackPanel>
+                    <CheckBox Content="Split tone colors by line&#xD;&#xA;(only works if tonestep is equal &#xD;&#xA;across all colours)" IsThreeState="False"  Unchecked="checkBox_Unchecked" Checked="checkBox_Checked" IsChecked="True" HorizontalAlignment="Left" Margin="29,18,0,0" Grid.Row="1" VerticalAlignment="Top" Height="62" Width="219"/>
+                    <TextBox x:Name="heightMult" HorizontalAlignment="Left" Margin="29,165,0,0" Grid.Row="1" TextWrapping="Wrap" Text="1" MaxLength="2" PreviewTextInput="NumberValidationTextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="19,134,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="186"><Run Text="Canvas height mult. Only increase"/><LineBreak/><Run Text=" if generated image doesn't fit"/></TextBlock>
+                    <ComboBox x:Name="items_box"  HorizontalAlignment="Left" Margin="620,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"  SelectionChanged="ComboBox_SelectionChanged"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="452,156,0,0" TextWrapping="Wrap" Text="Change the order of mixing colours. Technically, there should be no difference. All chosen colour combinations still show up but visually order has huge impact" VerticalAlignment="Top" Height="94" Width="163" Grid.RowSpan="2"/>
+
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="282*"></ColumnDefinition>
+
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"></RowDefinition>
+                        <RowDefinition Height="23*"></RowDefinition>
+
+
+                    </Grid.RowDefinitions>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Instructions">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="texto" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="20" Height="500" Width="600" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FontWeight="Normal" IsEnabled="true" TextWrapping="NoWrap" Margin="69,28,94,28" Text="Hi. This app creates colour palette for your needs. There are &#xA;not really much checks so if you try to break it it will break :)&#xA;&#xA;You can leave canvas size empty. that way size will be&#xA; calculated automatically based on red colour settings.&#xA;&#xA;If you set  color range to 0-255 and tone steps to 1 it will try&#xA;to show the whole RGB palette which is over 16 million &#xA;colours. On my PC it took around 15 minutes. RAM expensive. &#xA;&#xA;Works best when tonestep divides range without the remainder.&#xA;For example if colour range is 0-255 then &quot;good&quot; dividers are 5,&#xA; 15, 17, 51, 85, 255.&#xD;&#xA;&#xD;&#xA;If you want more boxes per row set the desired width and &#xD;&#xA;uncheck spliting by tones.&#xD;&#xA; &#xA;Saves image in the same folder with .exe. Same name so if need&#xA;several pictures then move it after each save.&#xA;Saving works correctly only for small canvas size. There are&#xA;limits to this. Big image will suffer quality loss.&#xA;It is better to screenshot needed piece in the app and&#xA;edit it in external app.&#xA;Originally app made for creating materials for 3D models.&#xA;Have a good day!&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;" Grid.Column="2"/>
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="763*"/>
+
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
+    
